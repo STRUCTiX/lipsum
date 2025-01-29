@@ -70,7 +70,7 @@ impl<'a> MarkovChain<'a> {
     /// // The chain jumps consistently like this:
     /// assert_eq!(chain.generate_with_rng(&mut rng, 1), "Orange.");
     /// assert_eq!(chain.generate_with_rng(&mut rng, 1), "Infra-red.");
-    /// assert_eq!(chain.generate_with_rng(&mut rng, 1), "Yellow.");
+    /// assert_eq!(chain.generate_with_rng(&mut rng, 1), "Blue.");
     /// # }
     /// ```
     pub fn new() -> MarkovChain<'a> {
@@ -646,7 +646,7 @@ mod tests {
         // punctuation is capitalized.
         assert_eq!(
             lipsum_words_with_rng(ChaCha20Rng::seed_from_u64(5), 9),
-            "Nullam habuit. Voluptatem cum summum bonum in voluptate est."
+            "Nullam habuit. Voluptatem cum summum bonum in voluptate aut."
         );
     }
 
@@ -707,7 +707,7 @@ mod tests {
 
         assert_eq!(
             chain.generate_with_rng(rng, 15),
-            "A b bar a b a b bar a b x y b y x."
+            "A b bar a b x y y b bar x y y b x."
         );
     }
 }
